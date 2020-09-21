@@ -1,0 +1,32 @@
+{
+  "name": "iso-errors",
+  "version": "0.2.0",
+  "description": "Isomorphic errors adapted from nodejs.",
+  "main": "errors.node.js",
+  "module": "errors.js",
+  "scripts": {
+    "preinstall": "gpm -n .. -t .. -u https -i .",
+    "postinstall": "node -e \"try { require('../esm/esm.js')(module); } catch (e) {require('child_process').execSync('npm i', {cwd: require('path').join('..', 'esm')})}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isysd-mirror/iso-errors.git"
+  },
+  "keywords": [
+    "isomorphic",
+    "guld",
+    "runtime",
+    "errors"
+  ],
+  "author": "isysd",
+  "license": "MIT",
+  "dependencies": {
+    "esm": "../esm",
+    "iso-assert": "../iso-assert",
+    "iso-buffer": "../iso-buffer",
+    "iso-util": "../iso-util"
+  },
+  "peerDependencies": {
+    "gpm": "https://github.com/IonicaBizau/gpm.git"
+  }
+}
